@@ -12,7 +12,8 @@ console.log(picked);
 if (picked == "davinci")
 {
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
     
     davinci();
@@ -20,21 +21,24 @@ if (picked == "davinci")
 }
 if(picked=="tesla"){
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
 
     tesla();
 }
 if(picked=="plato"){
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
     plato();
 
 }
 if(picked=="newton"){
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
     newton();
 
@@ -42,22 +46,20 @@ if(picked=="newton"){
 if(picked=="darwin"){
     darwin();
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
 
 }
 if(picked=="galileo"){
     var removed=person.splice(ran,1);
-    playnum++;
+    
+    
     console.log("play: "+ playnum);
     galileo();
 
 }
-if(playnum==6){
-    alert("you guessed "+win+" historical figures out of 6")
-    
-}
-}
+
 
 
 function davinci() {
@@ -102,12 +104,19 @@ function davinci() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"&& name[5]=="-"&& name[6]=="-"){
             winP=true;
             win++;
+            playnum++;
+           
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4] + nameD[5] + nameD[6];
         document.getElementById("win").innerHTML=win;
         document.getElementById("remaining").innerHTML=rem;
         console.log(win);
+       
+        if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }
         if(winP==true || rem==0){
             setTimeout (function(){
                 source.removeChild(imag);
@@ -170,6 +179,7 @@ function tesla() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"){
             wint=true;
             win++;
+            playnum++;
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4];
@@ -179,7 +189,10 @@ function tesla() {
         
 
 
-    
+     if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }
     if(wint==true || rem==0){
             
             
@@ -239,11 +252,15 @@ function newton() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"&& name[5]=="-"){
             wint=true;
             win++;
+            playnum++;
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4]+nameD[5];
         document.getElementById("win").innerHTML=win;
-        console.log(win);
+         if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }console.log(win);
         if(wint==true || rem==0){
             
             
@@ -310,13 +327,17 @@ function darwin() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"&& name[5]=="-"){
             wint=true;
             win++;
+            playnum++;
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4]+nameD[5];
         document.getElementById("win").innerHTML=win;
         console.log(win);
         
-        
+         if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }
         if(wint==true || rem==0){
             
             setTimeout (function(){
@@ -385,13 +406,17 @@ function plato() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"){
             wint=true;
             win++;
+            playnum++;
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4];
         document.getElementById("win").innerHTML=win;
         console.log(win);
         
-        
+         if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }
         if(wint==true || rem==0){
             
             setTimeout (function(){
@@ -458,13 +483,17 @@ function galileo() {
         if (name[0]=="-" && name[1]=="-"&& name[2]=="-"&& name[3]=="-"&& name[4]=="-"&& name[5]=="-"&& name[6]=="-"){
             wint=true;
             win++;
+            playnum++;
 
         }
         currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4]+nameD[5]+nameD[6];
         document.getElementById("win").innerHTML=win;
         console.log(win);
         
-        
+         if(playnum==6){
+            alert("you guessed "+win+" historical figures out of 6");
+            
+        }
         if(wint==true || rem==0){
             
             setTimeout (function(){
@@ -485,4 +514,4 @@ function galileo() {
 
 
 
-}
+}}
