@@ -1,40 +1,69 @@
 var person = ["davinci", "tesla", "plato", "newton", "darwin", "galileo"];
 var win=0;
+var ran=0;
+playnum=0;
+pickperson();
+function pickperson(){
 var ran = Math.floor(Math.random() * person.length);
 console.log(ran);
+
 var picked = person[ran];
 console.log(picked);
 if (picked == "davinci")
 {
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
+    
     davinci();
 
 }
 if(picked=="tesla"){
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
+
     tesla();
 }
 if(picked=="plato"){
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
     plato();
 
 }
 if(picked=="newton"){
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
     newton();
 
 }
 if(picked=="darwin"){
     darwin();
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
 
 }
 if(picked=="galileo"){
+    var removed=person.splice(ran,1);
+    playnum++;
+    console.log("play: "+ playnum);
     galileo();
 
 }
-
+if(playnum==6){
+    alert("you guessed "+win+" historical figures out of 6")
+    
+}
+}
 
 
 function davinci() {
-    console.log(person[0])
-    var removed=person.splice(ran,1);
-    console.log(person[0])
+   
+    
+    
 
     var imag = document.createElement("img");
     imag.src = "assets/images/davinci.jpg";
@@ -48,6 +77,7 @@ function davinci() {
     var winP = false;
     var rem = 12;
     var currentWord = document.getElementById("current");
+    currentWord.innerHTML = nameD[0] + nameD[1] + nameD[2] + nameD[3] + nameD[4] + nameD[5] + nameD[6];
     
     document.onkeyup = function () {
 
@@ -83,7 +113,7 @@ function davinci() {
                 source.removeChild(imag);
                 rem=12;
                 document.getElementById("remaining").innerHTML=rem;
-                
+                pickperson();
                 
             },500)
             
@@ -101,6 +131,7 @@ function davinci() {
 }
 
 function tesla() {
+    
     var imag = document.createElement("img");
     imag.src = "assets/images/tesla.jpg";
     imag.width=350;
@@ -156,7 +187,7 @@ function tesla() {
             source.removeChild(imag);
             rem=12;
             document.getElementById("remaining").innerHTML=rem;
-            newton();
+            pickperson();
         },500)
 
 
@@ -168,6 +199,7 @@ function tesla() {
 }}
 
 function newton() {
+    
     var imag = document.createElement("img");
     imag.src = "assets/images/newton.jpg";
     imag.width=350;
@@ -219,7 +251,7 @@ function newton() {
                 source.removeChild(imag);
                 rem=12;
                 document.getElementById("remaining").innerHTML=rem;
-                darwin();
+                pickperson();
             },500)
     
         }
@@ -238,6 +270,7 @@ function newton() {
 
 
 function darwin() {
+    
     var imag = document.createElement("img");
     imag.src = "assets/images/darwin.jpg";
     imag.width=350;
@@ -290,7 +323,7 @@ function darwin() {
                 source.removeChild(imag);
                 rem=12;
                 document.getElementById("remaining").innerHTML=rem;
-                plato();
+                pickperson();
             },500)
             
     
@@ -312,6 +345,7 @@ function darwin() {
 
 
 function plato() {
+    
     var imag = document.createElement("img");
     imag.src = "assets/images/plato.jpg";
     imag.width=350;
@@ -364,7 +398,7 @@ function plato() {
                 source.removeChild(imag);
                 rem=12;
                 document.getElementById("remaining").innerHTML=rem;
-                galileo();
+                pickperson();
             },500)
             
     
@@ -384,6 +418,7 @@ function plato() {
 
 
 function galileo() {
+    
     var imag = document.createElement("img");
     imag.src = "assets/images/gali.jpg";
     imag.width=350;
@@ -436,7 +471,7 @@ function galileo() {
                 source.removeChild(imag);
                 rem=12;
                 document.getElementById("remaining").innerHTML=rem;
-                plato();
+                pickperson();
             },500)
             
     
